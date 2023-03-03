@@ -7,7 +7,7 @@ function App() {
   let user = 'yejin1';
   // react에서 변수처럼 자료를 보관할 수 있는 state문법
   let [count, setCount] = useState(0);
-  let [like, setLike] = useState(0);
+  let [like, setLike] = useState([0,0,0]);
   // 변수에 들어있는 데이터 html에 넣기
   // JSX 중괄호 문법 사용
   // 한 곳에다가 여러가지 자료를 저장하고 싶을 때 Array[ ]
@@ -55,12 +55,34 @@ function App() {
         }}>Click Me</button>
       </div>
 
+      {/* {
+        [1,2,3].map(function(){
+          return <div>안녕</div>
+        })
+      } */}
+
+      {
+        title.map(function(a, i){
+          return (
+            <div className="list" key={i}>
+              <h4>{title[i]}</h4>
+              <span onClick={()=>{
+                let copy = [...like];
+                copy[i] = copy[i] + 1
+                setLike(copy)
+              }}>👍{like[i]}</span>
+              <p>안녕하세요. 저는 이예진입니다.</p>
+            </div>
+          )
+        })
+      }
+
       
-      <div className="list">
+      {/* <div className="list">
         <h4>{title[0]}</h4>
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
         <p>안녕하세요. 저는 이예진입니다.</p>
-      </div>
+      </div> */}
 
       {/* <div className="list">
         <h4>{title[1]}</h4>
@@ -87,6 +109,7 @@ function App() {
       }}>글 정렬</button>
 
       <button onClick={changeBg}>배경색 변경</button>
+      <button>이름변경</button>
 
     </div>
   );
