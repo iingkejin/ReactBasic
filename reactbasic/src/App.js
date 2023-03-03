@@ -19,6 +19,30 @@ function App() {
     setbgColor(newBg)
   }
 
+
+  // map함수가 array의 갯수만큼 retrun을 반복한다.
+  // 매개변수(파라미터)를 만들어주면 함수 파라미터가 array자료 안에 있는 데이터가 된다
+  [1,2,3].map(function(num){
+    // return console.log(num)
+  })
+
+  // let num = [1,2,3,4,5];
+  // let newNum = num.map((num)=> num + 1)
+  // console.log(num)
+  // console.log(newNum)
+
+  let num = [1,2,3,4,5];
+  let newArr = num.map(function(element){
+    return element * 3
+  })
+  console.log(newArr)
+
+  for(let i = 0; i < num.length; i++) {
+    num[i] = num[i] * 3;
+  }
+  console.log(num)
+
+
   return ( 
     <div className="App" style={{backgroundColor : bgColor}}>
       <h1>Hello, {user}!</h1>
@@ -31,13 +55,14 @@ function App() {
         }}>Click Me</button>
       </div>
 
+      
       <div className="list">
         <h4>{title[0]}</h4>
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
         <p>안녕하세요. 저는 이예진입니다.</p>
       </div>
 
-      <div className="list">
+      {/* <div className="list">
         <h4>{title[1]}</h4>
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
         <p>안녕하세요. 저는 이예진입니다.</p>
@@ -47,7 +72,7 @@ function App() {
         <h4>{title[2]}</h4>
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
         <p>안녕하세요. 저는 이예진입니다.</p>
-      </div>
+      </div> */}
 
       <button onClick={()=>{
         let copy = [...title];
