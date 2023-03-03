@@ -12,10 +12,15 @@ function App() {
   // JSX 중괄호 문법 사용
   // 한 곳에다가 여러가지 자료를 저장하고 싶을 때 Array[ ]
   let [title, setTitle] = useState(["DW아카데미 503호", "DW아카데미 501호", "DW아카데미 203호"])
-  let [bgColor, setbgColog] = useState('')
+  let [bgColor, setbgColor] = useState('white');
+
+  let changeBg = () => {
+    let newBg = bgColor == 'white'? 'red' : 'white';
+    setbgColor(newBg)
+  }
 
   return ( 
-    <div className="App">
+    <div className="App" style={{backgroundColor : bgColor}}>
       <h1>Hello, {user}!</h1>
       <p>This is a React App</p>
 
@@ -43,6 +48,7 @@ function App() {
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
         <p>안녕하세요. 저는 이예진입니다.</p>
       </div>
+
       <button onClick={()=>{
         let copy = [...title];
         copy[0] = "리액트 너무 재밌어요!";
@@ -54,7 +60,9 @@ function App() {
         copy.sort()
         setTitle(copy);
       }}>글 정렬</button>
-      <button >배경색 변경</button>
+
+      <button onClick={changeBg}>배경색 변경</button>
+
     </div>
   );
 }
