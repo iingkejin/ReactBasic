@@ -13,6 +13,9 @@ function App() {
   // 한 곳에다가 여러가지 자료를 저장하고 싶을 때 Array[ ]
   let [title, setTitle] = useState(["DW아카데미 503호", "DW아카데미 501호", "DW아카데미 203호"])
   let [bgColor, setbgColor] = useState('white');
+  let [name, setName] =useState(['이예진1', '이예진2', '이예진3'])
+  let [ye, setYe] = ['yejin', 'lee', 'lala'];
+
 
   let changeBg = () => {
     let newBg = bgColor == 'white'? 'red' : 'white';
@@ -61,6 +64,13 @@ function App() {
         })
       } */}
 
+
+      {/* {
+        ye.map(function(a){
+          return a.toUpperCase()
+        })
+      } */}
+
       {
         title.map(function(a, i){
           return (
@@ -71,7 +81,7 @@ function App() {
                 copy[i] = copy[i] + 1
                 setLike(copy)
               }}>👍{like[i]}</span>
-              <p>안녕하세요. 저는 이예진입니다.</p>
+              <p>안녕하세요. 저는 {name[i]} 입니다.</p>
             </div>
           )
         })
@@ -109,7 +119,11 @@ function App() {
       }}>글 정렬</button>
 
       <button onClick={changeBg}>배경색 변경</button>
-      <button>이름변경</button>
+      <button onClick={()=>{
+        let copy = [...name];
+        copy = ['강해민', '백승호', '감원재']
+        setName(copy)
+      }}>이름변경</button>
 
     </div>
   );
