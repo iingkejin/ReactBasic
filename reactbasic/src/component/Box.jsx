@@ -1,4 +1,5 @@
 import React from 'react'
+import './Box.css'
 
 // 컴포넌트 생성시 주의사항
 // 1. 컴포넌트의 이름은 반드시 대문자로 시작해야 한다.
@@ -10,10 +11,11 @@ import React from 'react'
 
 // 컴포넌트를 나누는 절대적인 기준은 없다. 
 // 코드를 직접 짜면서 본인만의 기준을 만드는게 좋음
-const Box = () => {
+const Box = (props) => {
   return (
-    <div>Box
-      <h1>Box Component</h1>
+    <div className='box'>
+      <h1>Box{props.num}</h1>
+      <h2>Yejin</h2>
     </div>
   )
 }

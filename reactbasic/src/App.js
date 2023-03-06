@@ -52,9 +52,10 @@ function App() {
   // State는 기존 값을 잃어버리지 않고 기억하고 있다.
   return (
     <div className='App'>
-      {/* <State/> */}
-      <h1>{count}</h1>
-      <button onClick={increase}>+1</button>
+      <Box num="1"/>
+      <Box num="2"/>
+      <Box num="3"/>
+      <Box num="4"/>
     </div>
   );
 }
