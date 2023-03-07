@@ -22,7 +22,7 @@ function CommentList() {
       {
         comments.map((comment, i)=>{
           return (
-            <Comment name={comment.name} comment={comment.comment}/>
+            <Comment name={comment.name} comment={comment.comment} key={i}/>
           )
         })
       }
