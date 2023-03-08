@@ -28,6 +28,11 @@ function CommentList() {
     console.log(index)
   }
 
+  const addCommnet = () => {
+    const add = {name: "히히ㅇㅎㅇㄶ히", comment : "아아아아아?~!!!"}
+    setCommentList([add,...commentList])
+  }
+
   return (
     <div>
       {
@@ -37,6 +42,7 @@ function CommentList() {
           )
         })
       }
+      <button onClick={addCommnet}>글추가</button>
     </div>
   )
 }
