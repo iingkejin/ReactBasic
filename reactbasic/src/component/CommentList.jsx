@@ -36,6 +36,9 @@ function CommentList() {
 
     const add = {name : name, comment: content}
     setCommentList([add,...commentList])
+    // state변경 함수에 빈 문자열을 넣어서 input에 작성된 내용을 초기화
+    setName('')
+    setContent('')
   }
 
   return (
@@ -47,6 +50,9 @@ function CommentList() {
           )
         })
       }
+      {/* onChange 이벤트는 input 요소에서 값이 변경될 때 발생 
+          그 때 발생한 이벤트를 매개변수 e
+      */}
       이름 : <input value={name} onChange={(e) => setName(e.target.value)}/>
       댓글 : <input value={content} onChange={(e) => setContent(e.target.value)}/>
       <button onClick={addComment}>글추가</button>
