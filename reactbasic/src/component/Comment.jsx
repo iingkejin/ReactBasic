@@ -44,6 +44,7 @@ function Comment(props) {
         <span style={styles.nameText}>{props.name}</span>
         <span style={styles.commentText}>{props.comment}</span>
       </div>
+      <button onClick={props.onDelete}>X</button>
     </div>
   )
 }

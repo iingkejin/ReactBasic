@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './Comment';
+import {useState} from 'react';
 
 const comments = [
   {
@@ -16,13 +17,23 @@ const comments = [
   }
 ]
 
+
 function CommentList() {
+  const [commentList, setCommentList] = useState(comments);
+
+  const deleteComment = (index) => {
+    const newCommentList = [...commentList];
+    newCommentList.splice(index, 1);
+    setCommentList(newCommentList)
+    console.log(index)
+  }
+
   return (
     <div>
       {
-        comments.map((comment, i)=>{
+        commentList.map((comment, i)=> {
           return (
-            <Comment name={comment.name} comment={comment.comment} key={i}/>
+            <Comment name={comment.name} comment={comment.comment} key={i} onDelete={()=> deleteComment(i)}/>
           )
         })
       }
