@@ -30,16 +30,29 @@ function CommentList() {
     console.log(index)
   }
 
-  const addComment = () => {
-    // const add = {name: "히히ㅇㅎㅇㄶ히", comment : "아아아아아?~!!!"}
-    // setCommentList([add,...commentList])
+  // const addComment = () => {
+  //   // const add = {name: "히히ㅇㅎㅇㄶ히", comment : "아아아아아?~!!!"}
+  //   // setCommentList([add,...commentList])
 
-    const add = {name : name, comment: content}
-    setCommentList([add,...commentList])
-    // state변경 함수에 빈 문자열을 넣어서 input에 작성된 내용을 초기화
-    setName('')
-    setContent('')
-  }
+  //   const add = {name : name, comment: content}
+  //   setCommentList([add,...commentList])
+  //   // state변경 함수에 빈 문자열을 넣어서 input에 작성된 내용을 초기화
+  //   setName('')
+  //   setContent('')
+  // }
+
+  const addComment = () => {
+    // name, content value값이 없을 때
+    name === '' || content === '' ? alert('이름과 댓글을 입력하세요') : (
+      // iife 
+      (()=>{
+        const add = {name : name, comment: content}
+        setCommentList([add,...commentList])
+        setName('')
+        setContent('')
+      })()
+    )
+  };
 
   return (
     <div>
