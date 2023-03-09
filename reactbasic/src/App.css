@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.back {
+  height: 500px;
+  background-image: url(./toy.jpg);
+}
